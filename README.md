@@ -229,9 +229,3 @@ Contribuições são bem-vindas:
 ## 📄 Licença
 
 Distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](LICENSE).
-
-## 👤 Autor
-
-**SEU NOME**
-[LinkedIn](https://www.linkedin.com/in/SEU-PERFIL) · [GitHub](https://github.com/SEU-USUARIO)
-# pipeline-analise-feedbacks-com-ia-dashboards
