@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 Feedback Insights — Pipeline de Análise de Feedbacks com IA
+# Feedback Insights — Pipeline de Análise de Feedbacks com IA
 
 **Transforma feedbacks em texto livre em indicadores acionáveis: sentimento, temas e pontos de atenção.**
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 Empresas de fitness e bem-estar recebem centenas de avaliações em texto livre (academias, apps de corrida, apps de meditação), e lê-las uma a uma não escala. Este projeto automatiza esse trabalho:
 
@@ -24,7 +24,7 @@ Empresas de fitness e bem-estar recebem centenas de avaliações em texto livre 
 3. **Armazena** o resultado estruturado em um banco **SQL**.
 4. **Disponibiliza** views prontas para um **dashboard interativo no Power BI**.
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```mermaid
 flowchart LR
@@ -38,7 +38,7 @@ flowchart LR
     H --> G
 ```
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Classificação de sentimento**: positivo, negativo ou neutro, com score de -1 a 1.
 - **Categorização por tema**: atendimento, preço, estrutura, limpeza, usabilidade do app, desempenho de treino e outros.
@@ -49,7 +49,7 @@ flowchart LR
 - **Resiliente**: retry com backoff exponencial; lotes que falham são reprocessados na próxima execução.
 - **Pronto para BI**: views SQL portáveis e exportação em CSV.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 | Camada | Ferramenta |
 |---|---|
@@ -60,7 +60,7 @@ flowchart LR
 | Banco | SQLite (padrão) · PostgreSQL (opcional, via Docker) |
 | Visualização | Power BI Desktop |
 
-## 🚀 Como executar
+## Como executar
 
 ### Pré-requisitos
 - Python 3.10 ou superior
@@ -128,7 +128,7 @@ python -m src.pipeline --input data/feedbacks_exemplo.csv --provider openai
 | `nota` | `5` |
 | `texto` | `Adorei a academia! ...` |
 
-## 📊 Exemplo de resultado
+## Exemplo de resultado
 
 | id | fonte | sentimento | score | categoria | pontos de atenção |
 |---|---|---|---|---|---|
@@ -139,7 +139,7 @@ python -m src.pipeline --input data/feedbacks_exemplo.csv --provider openai
 
 > Exemplo gerado no modo mock (heurística por palavras-chave). Com IA real, a classificação tende a captar melhor as nuances do texto.
 
-## 📈 Dashboard no Power BI
+## Dashboard no Power BI
 
 O guia completo está em [`docs/powerbi_guia.md`](docs/powerbi_guia.md), com conexão (CSV ou PostgreSQL), medidas DAX e layout sugerido.
 
@@ -149,7 +149,7 @@ Indicadores propostos: total de feedbacks, % positivo/negativo, score médio, se
 ![Dashboard](docs/dashboard.png)
 -->
 
-## 🗂️ Estrutura do repositório
+## Estrutura do repositório
 
 ```
 feedback-pipeline/
@@ -169,7 +169,7 @@ feedback-pipeline/
 └── requirements.txt
 ```
 
-## 🗄️ Modelo de dados
+## Modelo de dados
 
 ```mermaid
 erDiagram
@@ -200,7 +200,7 @@ erDiagram
 
 Views para BI: `vw_feedbacks_analisados` e `vw_pontos_atencao`.
 
-## 🧩 Decisões técnicas
+## Decisões técnicas
 
 - **Processamento em lotes** reduz custo e latência das chamadas à IA.
 - **Saída estruturada em JSON**, validada com Pydantic: respostas inválidas são descartadas sem derrubar o pipeline.
@@ -208,7 +208,7 @@ Views para BI: `vw_feedbacks_analisados` e `vw_pontos_atencao`.
 - **SQLAlchemy + SQL padrão** mantêm o projeto portável entre SQLite, PostgreSQL e SQL Server.
 - **Padrão de estratégia** (`BaseAnalyzer`) facilita adicionar novos provedores de IA.
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] Testes automatizados com `pytest` (parser e inserção no banco)
 - [ ] Agendamento da execução (cron / GitHub Actions)
@@ -216,7 +216,7 @@ Views para BI: `vw_feedbacks_analisados` e `vw_pontos_atencao`.
 - [ ] Coleta de feedbacks reais (Google Play, formulários)
 - [ ] Detecção de tendências e alertas automáticos
 
-## 🤝 Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas:
 
@@ -226,12 +226,6 @@ Contribuições são bem-vindas:
 4. Push: `git push origin feature/minha-melhoria`
 5. Abra um Pull Request
 
-## 📄 Licença
+## Licença
 
 Distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](LICENSE).
-
-## 👤 Autor
-
-**SEU NOME**
-[LinkedIn](https://www.linkedin.com/in/SEU-PERFIL) · [GitHub](https://github.com/SEU-USUARIO)
-# pipeline-analise-feedbacks-com-ia-dashboards
